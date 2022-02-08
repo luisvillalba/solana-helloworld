@@ -1,5 +1,3 @@
-pub mod entrypoint;
-
 use solana_program::{
     account_info::AccountInfo, entrypoint, entrypoint::ProgramResult, msg, pubkey::Pubkey,
 };
@@ -12,7 +10,7 @@ fn process_instruction(
     instruction_data: &[u8],
 ) -> ProgramResult {
     msg!(
-        "process_instruction: {}: {} accounts, data={:?}",
+        "Process_instruction: {}: {} accounts, data={:?}",
         program_id,
         accounts.len(),
         instruction_data

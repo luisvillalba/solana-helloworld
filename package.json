@@ -4,7 +4,8 @@
   "description": "",
   "main": "client/index.ts",
   "scripts": {
-    "build_and_deploy": "cargo build-bpf && solana program deploy /Users/lvillalba/code/sol-hello/target/deploy/sol_hello.so",
+    "start": "ts-node client/index.ts",
+    "build_and_deploy": "cargo build-bpf && solana program deploy ./target/deploy/sol_hello.so",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
