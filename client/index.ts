@@ -9,8 +9,10 @@ import {
   sendAndConfirmTransaction,
 } from '@solana/web3.js';
 
-const programId = new PublicKey('');
-const key: Uint8Array = Uint8Array.from([])
+import * as fs from 'fs';
+const seed: string = fs.readFileSync('./id.json').toString();
+const programId: PublicKey = new PublicKey(fs.readFileSync('./programid.txt').toString().trim());
+const key: Uint8Array = Uint8Array.from(JSON.parse(seed.trim()));
 
 /**
  * Establish a connection to the cluster
@@ -32,7 +34,7 @@ const main = async () => {
   const instruction = new TransactionInstruction({
     keys: [{ pubkey: signer.publicKey, isSigner: false, isWritable: true }],
     programId,
-    data: Buffer.alloc(0),
+    data: Buffer.from('123'),
   });
   await sendAndConfirmTransaction(
     connection,

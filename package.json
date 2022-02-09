@@ -5,6 +5,8 @@
   "main": "client/index.ts",
   "scripts": {
     "start": "ts-node client/index.ts",
+    "setup": "echo \"export PATH='/home/gitpod/.local/share/solana/install/active_release/bin:\\$PATH'\" >> /home/gitpod/.bashrc && bash",
+    "mon": "solana logs 3aYLHeMPBsPAiByzNyijB5YkxFoQB4VSffe2vFSh2KuQ",
     "build_and_deploy": "cargo build-bpf && solana program deploy ./target/deploy/sol_hello.so",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

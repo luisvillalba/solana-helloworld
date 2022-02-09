@@ -1,0 +1,8 @@
+tasks:
+  - init: sh -c "$(curl -sSfL https://release.solana.com/v1.9.5/install)" && cp -R .solana-config/* /home/gitpod/.config/solana/;
+    command: sh /workspace/solana-helloworld/install.sh
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - matklad.rust-analyzer
