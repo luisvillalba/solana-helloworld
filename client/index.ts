@@ -10,7 +10,7 @@ import {
 } from '@solana/web3.js';
 
 import * as fs from 'fs';
-const seed: string = fs.readFileSync('./id.json').toString();
+const seed: string = fs.readFileSync('/home/gitpod/.config/solana/id.json').toString();
 const programId: PublicKey = new PublicKey(fs.readFileSync('./programid.txt').toString().trim());
 const key: Uint8Array = Uint8Array.from(JSON.parse(seed.trim()));
 

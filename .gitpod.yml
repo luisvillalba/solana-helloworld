@@ -1,12 +1,7 @@
-image:
-  file: .gitpod.Dockerfile
-
-# tasks:
-#   - name: "install"
-#     init: |
-#       rm -rf /home/gitpod/.config/solana/*
-#       cp -R /workspace/solana-helloworld/.solana-config/* /home/gitpod/.config/solana/
-#       export PATH="/home/gitpod/.local/share/solana/install/active_release/bin:$PATH"
+tasks:
+  - name: "install"
+    init: |
+      sh initialize.sh
 
 vscode:
   extensions:
