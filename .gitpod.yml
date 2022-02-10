@@ -5,16 +5,16 @@ tasks:
       ./recover-config.sh
   - name: "validator"
     command: |
-      eval $(gp env -e)
+      ./sol-env.sh
       solana-test-validator
   - name: "main-terminal"
     command: |
-      eval $(gp env -e)
+      ./sol-env.sh
       solana --version
   - name: "mon"
     openMode: split-right
     command: |
-      eval $(gp env -e)
+      ./sol-env.sh
       npm run mon
 
 
