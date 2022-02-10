@@ -1,7 +1,10 @@
 tasks:
   - name: "install"
-    init: |
-      sh initialize.sh
+    before: |
+      sh install-sol.sh
+  - name: "Command"
+    command: |
+      sh recover-config.sh
 
 vscode:
   extensions:
