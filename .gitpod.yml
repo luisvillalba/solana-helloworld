@@ -5,16 +5,22 @@ tasks:
       ./recover-config.sh
   - name: "validator"
     command: |
-      ./sol-env.sh
+      if [[ ! "$PATH" =~ .*"solana/install/active_release/bin".* ]]; then
+          eval $(gp env -e PATH="/home/gitpod/.local/share/solana/install/active_release/bin:$PATH");
+      fi
       solana-test-validator
   - name: "main-terminal"
     command: |
-      ./sol-env.sh
+      if [[ ! "$PATH" =~ .*"solana/install/active_release/bin".* ]]; then
+          eval $(gp env -e PATH="/home/gitpod/.local/share/solana/install/active_release/bin:$PATH");
+      fi
       solana --version
   - name: "mon"
     openMode: split-right
     command: |
-      ./sol-env.sh
+      if [[ ! "$PATH" =~ .*"solana/install/active_release/bin".* ]]; then
+          eval $(gp env -e PATH="/home/gitpod/.local/share/solana/install/active_release/bin:$PATH");
+      fi
       npm run mon
 
 
