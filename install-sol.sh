@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sh -c "$(curl -sSfL https://release.solana.com/v1.9.5/install)";
 
 if [[ ! "$PATH" =~ .*"solana/install/active_release/bin".* ]]; then
@@ -5,7 +7,9 @@ if [[ ! "$PATH" =~ .*"solana/install/active_release/bin".* ]]; then
 fi
 
 if [ -f "./.solana-config/id.json" ]; then
-    rm -rf /home/gitpod/.config/solana/*;
+    if [ -d "/home/gitpod/.config/solana" ]; then
+        rm -rf /home/gitpod/.config/solana/*;
+    fi
     cp -R /workspace/solana-helloworld/.solana-config/* /home/gitpod/.config/solana/;
 else 
     solana-keygen new --no-bip39-passphrase
