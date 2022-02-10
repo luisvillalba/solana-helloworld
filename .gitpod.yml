@@ -1,13 +1,15 @@
 tasks:
   - name: "prebuild"
-    before: |
-      ./install-sol.sh
     init: |
+      ./install-sol.sh
       ./recover-config.sh
   - name: "validator"
     command: |
       solana-test-validator
   - name: "main-terminal"
+    command: |
+      solana --version
+  - name: "mon"
     openMode: split-right
     command: |
       npm run mon
