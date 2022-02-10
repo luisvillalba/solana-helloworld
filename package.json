@@ -4,7 +4,8 @@
   "description": "",
   "main": "client/index.ts",
   "scripts": {
-    "start": "ts-node client/index.ts",
+    "start": "npm run build_and_deploy && npm run call",
+    "call": "ts-node client/index.ts",
     "setup": "echo \"export PATH='/home/gitpod/.local/share/solana/install/active_release/bin:\\$PATH'\" >> /home/gitpod/.bashrc && bash",
     "mon": "solana logs 3aYLHeMPBsPAiByzNyijB5YkxFoQB4VSffe2vFSh2KuQ",
     "build_and_deploy": "cargo build-bpf && solana program deploy ./target/deploy/sol_hello.so",
@@ -14,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@solana/web3.js": "^1.33.0",
+    "borsh": "^0.7.0",
     "ts-node": "^10.5.0",
     "typescript": "^4.5.5",
     "web3": "^1.7.0"
