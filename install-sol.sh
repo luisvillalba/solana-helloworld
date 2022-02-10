@@ -13,5 +13,6 @@ if [ -f "./.solana-config/id.json" ]; then
     cp -R /workspace/solana-helloworld/.solana-config/* /home/gitpod/.config/solana/;
 else 
     solana-keygen new --no-bip39-passphrase
-    cp -r /home/gitpod/.config/solana/* /workspace/solana-helloworld/.solana-config/
+    mkdir /workspace/solana-helloworld/.solana-config/
+    cp -R /home/gitpod/.config/solana/* /workspace/solana-helloworld/.solana-config/
 fi
