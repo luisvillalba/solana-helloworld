@@ -3,7 +3,7 @@
 sh -c "$(curl -sSfL https://release.solana.com/v1.9.5/install)";
 
 if [[ ! "$PATH" =~ .*"solana/install/active_release/bin".* ]]; then
-    eval $('gp env -e PATH="/home/gitpod/.local/share/solana/install/active_release/bin:$PATH"');
+    eval $(gp env -e PATH="/home/gitpod/.local/share/solana/install/active_release/bin:$PATH");
 fi
 
 if [ -f "./.solana-config/id.json" ]; then
