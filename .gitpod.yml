@@ -1,6 +1,6 @@
 tasks:
   - name: "prebuild"
-    init: |
+    before: |
       ./install-sol.sh
       ./recover-config.sh
   - name: "validator"
