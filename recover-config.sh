@@ -1,5 +1,5 @@
-if [[ "$PATH" != .*"solana/install/active_release/bin".* ]]; then
-  gp env PATH="/home/gitpod/.local/share/solana/install/active_release/bin:$PATH"
+if [[ ! "$PATH" =~ .*"solana/install/active_release/bin".* ]]; then
+    gp env PATH="/home/gitpod/.local/share/solana/install/active_release/bin:$PATH"
 fi
 
 if [ -f "./.solana-config/id.json" ]; then
