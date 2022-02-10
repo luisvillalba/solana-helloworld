@@ -1,10 +1,26 @@
 tasks:
-  - name: "install"
+  - name: "prebuild"
     before: |
       ./install-sol.sh
-  - name: "Command"
     init: |
       ./recover-config.sh
+  - name: "validator"
+    command: |
+      solana-test-validator
+  - name: "main-terminal"
+    openMode: split-right
+    command: |
+      npm run mon
+
+
+github:
+  prebuilds:
+    master: true
+    branches: false
+    pullRequests: true
+    pullRequestsFromForks: true
+    addComment: true
+    addBadge: false
 
 vscode:
   extensions:
