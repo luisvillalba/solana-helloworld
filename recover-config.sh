@@ -1,5 +1,3 @@
-gp env PATH="/home/gitpod/.local/share/solana/install/active_release/bin:$PATH"
-
 if [ -f "./.solana-config/id.json" ]; then
     rm -rf /home/gitpod/.config/solana/*;
     cp -R /workspace/solana-helloworld/.solana-config/* /home/gitpod/.config/solana/;
